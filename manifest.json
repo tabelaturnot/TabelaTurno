@@ -5,7 +5,8 @@
   "display": "standalone",
   "theme_color": "#FF0000",
   "background_color": "#FFFFFF",
-  "start_url": "./?utm_source=homescreen",
+  "start_url": "./?a_utm_source=homescreen",
+  "scope": ".",
 
   "icons": [
     {
