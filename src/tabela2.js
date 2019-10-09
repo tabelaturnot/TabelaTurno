@@ -1,6 +1,4 @@
 import React from 'react';
-import classNames from 'classnames';
-import PropTypes, { func } from 'prop-types';
 import tabelaGear from './tableGear';
 import { trackUser, trackEvent} from './analytics';
 

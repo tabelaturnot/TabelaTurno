@@ -1,6 +1,4 @@
 import React from "react";
-import classNames from "classnames";
-import { trackUser, trackEvent } from "./analytics";
 
 //const handleClickTheme = () =>  { alert('a'); }
 
