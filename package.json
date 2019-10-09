@@ -2,16 +2,13 @@
   "name": "TabelaTurno",
   "version": "0.2.0",
   "private": true,
-  "homepage": "https://angww.github.io/TabelaTurnoRefap/",
+  "homepage": "https://tabelaturnot.github.io/TabelaTurno/",
   "dependencies": {
-    "@material-ui/core": "^3.1.2",
-    "@material-ui/icons": "^3.0.1",
-    "logrocket": "^0.6.21",
-    "react": "^16.8.6",
-    "react-dom": "^16.5.2",
-    "react-ga": "^2.5.3",
-    "react-router-dom": "^4.3.1",
-    "react-scripts": "2.0.4"
+    "react": "^16.10.2",
+    "react-dom": "^16.10.2",
+    "react-ga": "^2.7.0",
+    "react-router-dom": "^5.1.2",
+    "react-scripts": "3.2.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -31,6 +28,6 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "gh-pages": "^2.0.1"
+    "gh-pages": "^2.1.1"
   }
 }
