@@ -72,7 +72,6 @@ class CardMenu extends Component {
     if (process.env.NODE_ENV === 'development') {
       buttonsForTest = (
         <>
-          <Link className="linkCard" to="/Reduc">Reduc</Link>
           <Link className="linkCard" to="/Teste4">Teste4</Link>
         </>
       );
@@ -95,6 +94,7 @@ class CardMenu extends Component {
                 <BtChangeTheme className="linkCard" />
                 <Link className="linkCard" to="/Refap">Refap 23-7-15</Link>
                 <Link className="linkCard" to="/Refap0">Refap 0-8-16</Link>
+                <Link className="linkCard" to="/Reduc">Reduc</Link>
                 {buttonsForTest}
                 <div className="menuTextInfo">
                 
