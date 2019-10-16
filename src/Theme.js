@@ -15,7 +15,7 @@ class BtnChangeTheme extends React.Component {
   }
 
   handleClickTheme() {
-    if (this.state.AppTheme == "") {
+    if (this.state.AppTheme === "") {
       this.setState(
         {
           AppTheme: "themeBlack"
@@ -40,7 +40,7 @@ class BtnChangeTheme extends React.Component {
   }
 
   render() {
-    const themeWhite = this.state.AppTheme == "";
+    const themeWhite = this.state.AppTheme === "";
     const txtThemeToChange = themeWhite ? "escuro" : "claro";
     //this.VerifyAppTheme(themeWhite);
 

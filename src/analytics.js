@@ -10,7 +10,8 @@ export default Component =>
       this.trackPage(page);
     }
 
-    componentWillReceiveProps(nextProps) {
+    // TODO: Fix this.  /.,/.,
+    UNSAFE_componentWillReceiveProps(nextProps) {
       const currentPage = this.props.location.pathname;
       const nextPage = nextProps.location.pathname;
       if (currentPage !== nextPage) this.trackPage(nextPage);

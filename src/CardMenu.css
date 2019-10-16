@@ -24,4 +24,9 @@
     color: var(--color-font-main);
 }
 
+.menuTextInfo {
+    font-size: 4pt;
+    padding-left: 15pt;
+}
+
 

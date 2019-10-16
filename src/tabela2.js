@@ -1,6 +1,7 @@
 import React from 'react';
 import tabelaGear from './tableGear';
-import { trackUser, trackEvent} from './analytics';
+import trackEvent from './analytics';
+
 
 
 
@@ -18,9 +19,9 @@ function DateToStringFormated(date) {
 }
 
 function isSameDay(dateToCheck, dateToCheck2) {
-    return (dateToCheck.getDate() == dateToCheck2.getDate() 
-        && dateToCheck.getMonth() == dateToCheck2.getMonth()
-        && dateToCheck.getFullYear() == dateToCheck2.getFullYear());
+    return (dateToCheck.getDate() === dateToCheck2.getDate() 
+        && dateToCheck.getMonth() === dateToCheck2.getMonth()
+        && dateToCheck.getFullYear() === dateToCheck2.getFullYear());
 }
 
 function isToday(dateToCheck) {
@@ -136,9 +137,9 @@ class Tabela2 extends React.Component {
         this.setState({actualDay: nextFirstMounthDay, monthsTRs: newMonthsObj });
         
         // Track month loading
-        let trackAction = dateIn.getFullYear()+"-"+(dateIn.getMonth()+1);
-        console.log(trackAction);
-        trackEvent('Navigation', trackAction, 'label1');
+        //let trackAction = dateIn.getFullYear()+"-"+(dateIn.getMonth()+1);
+        //console.log(trackAction);
+        //trackEvent('Navigation', trackAction, 'label1');
          
      }
 
@@ -162,7 +163,7 @@ class Tabela2 extends React.Component {
 
     render() {  
         return ( 
-/*            <div className="tbContainer">*/
+            /* <div className="tbContainer">*/
             <table className={'tbMain'}>
                 {tBodyTable(this.state.monthsTRs)}
             </table>

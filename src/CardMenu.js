@@ -2,13 +2,12 @@ import React, { Component } from 'react';
 import {withRouter} from "react-router-dom";
 import { Link } from 'react-router-dom';
 import BtChangeTheme from './Theme';
-import { trackUser, trackEvent} from './analytics';
 
 import './CardMenu.css';
 
 function uuid_five() {
   return 'xxxxx'.replace(/[xy]/g, function(c) {
-    var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+    var r = Math.random() * 16 | 0, v = c === 'x' ? r : (r & 0x3 | 0x8);
     return v.toString(16);
   });
 }
@@ -97,11 +96,13 @@ class CardMenu extends Component {
                 <Link className="linkCard" to="/Refap">Refap 23-7-15</Link>
                 <Link className="linkCard" to="/Refap0">Refap 0-8-16</Link>
                 {buttonsForTest}
-                <span>{uuid_five()}-{this.state.numVisitCounter}</span>
+                <div className="menuTextInfo">
                 
-                  <div>Icons made by <a href="https://www.flaticon.com/authors/bqlqn" title="bqlqn">bqlqn</a> from <a href="https://www.flaticon.com/"                 title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/"                 title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
-                  <div>Icons made by <a href="https://www.freepik.com/" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/"                 title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/"                 title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
-                
+                <div>Envie sua tabela para <a href="mailto:tabelaturno@gmail.com">tabelaturno@gmail.com</a></div>  
+                <div>Icons made by <a href="https://www.flaticon.com/authors/bqlqn" rel="noopener noreferrer" title="bqlqn">bqlqn</a> from <a href="https://www.flaticon.com/" rel="noopener noreferrer" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" rel="noopener noreferrer" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+                <div>Icons made by <a href="https://www.freepik.com/" rel="noopener noreferrer" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" rel="noopener noreferrer" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" rel="noopener noreferrer" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+                <span>Internal number: {uuid_five()}-{this.state.numVisitCounter}</span>
+                </div>  
               </div>
             )
             : (
