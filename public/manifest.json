@@ -3,9 +3,10 @@
   "name": "Tabela Turno Refap",
   
   "display": "standalone",
-  "theme_color": "#FF0000",
+  "theme_color": "#000000",
   "background_color": "#FFFFFF",
-  "start_url": "/?utm_source=homescreen",
+  "start_url": "./?utm_source=homescreen",
+  "scope": "."
 
   "icons": [
     {
