@@ -6,8 +6,6 @@ import App from "./App";
 import withAnalytics from "./analytics.js";
 import * as serviceWorker from "./serviceWorker";
 
-//import LogRocket from 'logrocket';
-//LogRocket.init('vdf1vy/project-test1');
 
 const Root = () => (
   <Switch>

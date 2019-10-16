@@ -1,14 +1,16 @@
 {
   "name": "TabelaTurno",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "private": true,
   "homepage": "https://tabelaturnot.github.io/TabelaTurno/",
   "dependencies": {
+    "@babel/runtime": "^7.6.3",
     "react": "^16.10.2",
+    "react-addons-perf": "^15.4.2",
     "react-dom": "^16.10.2",
     "react-ga": "^2.7.0",
     "react-router-dom": "^5.1.2",
-    "react-scripts": "3.2.0"
+    "react-scripts": "^3.2.0"
   },
   "scripts": {
     "start": "react-scripts start",

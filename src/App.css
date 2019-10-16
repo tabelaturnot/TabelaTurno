@@ -48,7 +48,7 @@ div .App {
     /*min-width: 300px;*/
     box-sizing: border-box;
     width: 100%;
-    height: 50px;
+    height: 51px;
     padding: 15px 20px;
     font-weight: 700;
     transition: var(--transition-scrool-props);
@@ -145,5 +145,9 @@ div .App {
 .trHead th:first-child {
   left: 0;
   z-index: 50;
+}
+
+a:link {
+    color: var(--color-font-main);
 }
 
