@@ -44,7 +44,7 @@ const styleClassToday = function(inProp) {
 }
 const eventClick = function(inLog) {
     console.log("Click:" + inLog);
-    trackEvent('Click', inLog, 'label1');
+    trackEvent('Click', inLog, 'label2');
     return true;
 }
 const yearTD = (day) => <th className={'tdDate'} onClick={() => eventClick("Ano"+day.getFullYear())}>{day.getFullYear()}</th>;
