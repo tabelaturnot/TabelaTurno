@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {withRouter} from "react-router-dom";
 import { Link } from 'react-router-dom';
 import BtChangeTheme from './Theme';
+import trackEvent from './analytics';
 
 import './CardMenu.css';
 
@@ -40,6 +41,7 @@ class CardMenu extends Component {
     this.setState({ showMenu: true }, () => {
       document.addEventListener('click', this.closeMenu);
     });
+    trackEvent('Click', 'CardMenuIconClick', 'label2');
   }
   
   closeMenu(event) {
@@ -92,13 +94,13 @@ class CardMenu extends Component {
             ? (
               <div className="cardMenu" ref={(element) => { this.dropdownMenu = element; }}>
                 <BtChangeTheme className="linkCard" />
-                <Link className="linkCard" to="/Refap">Refap 23-7-15</Link>
-                <Link className="linkCard" to="/Refap0">Refap 0-8-16</Link>
-                <Link className="linkCard" to="/Reduc">Reduc</Link>
+                <Link className="linkCard" onClick={() => trackEvent('Click', 'CardMenuRefap0Click', 'label2')} to="/Refap">Refap 23-7-15</Link>
+                <Link className="linkCard" onClick={() => trackEvent('Click', 'CardMenuRefap23Click', 'label2')} to="/Refap0">Refap 0-8-16</Link>
+                <Link className="linkCard" onClick={() => trackEvent('Click', 'CardMenuReducClick', 'label2')} to="/Reduc">Reduc</Link>
                 {buttonsForTest}
                 <div className="menuTextInfo">
                 
-                <div>Envie sua tabela para <a href="mailto:tabelaturno@gmail.com">tabelaturno@gmail.com</a></div>  
+                <div>Envie sua tabela para <a href="mailto:tabelaturno@gmail.com" onClick={() => trackEvent('Click', 'CardMenuEmailClick', 'label2')}>tabelaturno@gmail.com</a></div>  
                 <div>Icons made by <a href="https://www.flaticon.com/authors/bqlqn" rel="noopener noreferrer" title="bqlqn">bqlqn</a> from <a href="https://www.flaticon.com/" rel="noopener noreferrer" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" rel="noopener noreferrer" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
                 <div>Icons made by <a href="https://www.freepik.com/" rel="noopener noreferrer" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" rel="noopener noreferrer" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" rel="noopener noreferrer" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
                 <span>Internal number: {uuid_five()}-{this.state.numVisitCounter}</span>
