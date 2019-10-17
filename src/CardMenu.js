@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {withRouter} from "react-router-dom";
 import { Link } from 'react-router-dom';
 import BtChangeTheme from './Theme';
-import trackEvent from './analytics';
+import { trackEvent } from './analytics';
 
 import './CardMenu.css';
 

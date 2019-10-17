@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import Tabela from './tabela2';
 import CardMenu from './CardMenu';
-import trackEvent from './analytics';
+import {trackEvent} from './analytics';
 
 
 import './App.css';

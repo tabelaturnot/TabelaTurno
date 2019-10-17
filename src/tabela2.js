@@ -1,6 +1,6 @@
 import React from 'react';
 import tabelaGear from './tableGear';
-import trackEvent from './analytics';
+import { trackEvent } from './analytics';
 
 
 

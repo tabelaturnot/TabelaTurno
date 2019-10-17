@@ -31,5 +31,8 @@ export default Component =>
 
 export const trackUser = userId => !dev && ga.set({ userId });
 
-export const trackEvent = (category, action, label) =>
-  !dev && ga.event({ category, action, label });
+export const trackEvent = (category, action, label) =>  { 
+  console.log("foi Evento " + action);
+  if(!dev)  { 
+      ga.event({ category: category, action: action, label: label, nonInteraction: true});
+  }}
