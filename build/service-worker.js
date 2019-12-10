@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/TabelaTurno/precache-manifest.fd1119a9471c25bdad5edecd45a6b8fd.js"
+  "/TabelaTurno/precache-manifest.1211a4dd14f2d0d8038dec5328828014.js"
 );
 
 self.addEventListener('message', (event) => {
