@@ -60,7 +60,7 @@ const dayTDfunc = (day) =>
             );
 const groupsTD = (groups) => 
     groups.map((groupName, i) =>
-        <th key={i} onClick={() => eventClick("Grupo "+groupName)}>{groupName}</th>
+        <th key={i} onClick={() => eventClick("Grupo "+groupName) }>{groupName}</th>
     );
 const daysTR = (daysIn) => daysIn.map((day, i) =>
     <tr key={i} className={[styleClassWeekDay(day.day), 'trTable'].join(' ')}>
@@ -113,9 +113,8 @@ class Tabela2 extends React.Component {
         const dateIn = new Date(); // GetToday
         const days = tabelaGear.getMonthScales(dateIn);
 
-        let beforeFirstMounthDay = new Date(dateIn.getFullYear(), dateIn.getMonth()-1, 1);
+        let beforeFirstMounthDay = new Date(dateIn.getFullYear(), dateIn.getMonth()-1, 10);
         let daysbefore = tabelaGear.getMonthScales(beforeFirstMounthDay);
-
         
         this.state = { 
             tableInput: tableName,
@@ -125,17 +124,22 @@ class Tabela2 extends React.Component {
         }
         //Load more 1 month
         const extTick = this.tick.bind(this);
+        let state = {};
         extTick();
     }
 
-    tick()   {
+    tick()  {
+      
         const dateIn = this.state.actualDay;
-        let nextFirstMounthDay = new Date(dateIn.getFullYear(), dateIn.getMonth()+1, 1);
+        let nextFirstMounthDay = new Date(dateIn.getFullYear(), dateIn.getMonth()+1, 5);
         let nextMonthScale = tabelaGear.getMonthScales(nextFirstMounthDay);
-        let newMonthsObj = this.state.monthsTRs;
-        newMonthsObj.push(monthTRsComplete(nextMonthScale));
-        this.setState({actualDay: nextFirstMounthDay, monthsTRs: newMonthsObj });
-        
+        this.setState({ 
+            monthsTRs: [
+                ...this.state.monthsTRs,
+                monthTRsComplete(nextMonthScale)
+            ],
+            actualDay: nextFirstMounthDay
+        });
         // Track month loading
         //let trackAction = dateIn.getFullYear()+"-"+(dateIn.getMonth()+1);
         //console.log(trackAction);
@@ -143,17 +147,18 @@ class Tabela2 extends React.Component {
          
      }
 
+     handleScroll() {
+        let distToBottom = getDistFromBottom();
+        if (distToBottom > 0 && distToBottom <= 1400) { // Near end;
+            let extTick = this.tick.bind(this);
+            extTick();
+        }
+     }
+
     componentDidMount() {
-        const extTick = this.tick.bind(this);
-        document.addEventListener('scroll', function() {
-            let distToBottom = getDistFromBottom();
-            //console.log(distToBottom);
-            if (distToBottom > 0 && distToBottom <= 1400) { // Near end;
-               console.log('dentro do reac');
-               extTick();
-            }
-        });
-    
+        
+        document.addEventListener('scroll', this.handleScroll.bind(this));
+
         let timer = setTimeout(function () {
             window.scrollTo(0, document.getElementsByClassName("tdToday")[0].offsetTop - 135); //era 88 
         }, 50);

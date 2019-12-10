@@ -82,7 +82,7 @@ class CardMenu extends Component {
     return (
       <>
       <div style={{float: 'right', userSelect: 'none'}} onClick={this.showMenu}>
-       <svg id="Layer" style={{stroke: 'var(--color-font-main)', fill: 'var(--color-font-main)'}} enable-background="new 0 0 64 64"  transform="translate(4,-5)" height="28" viewBox="0 0 64 64" width="28" xmlns="http://www.w3.org/2000/svg">
+       <svg id="Layer" style={{stroke: 'var(--color-font-main)', fill: 'var(--color-font-main)'}} enableBackground="new 0 0 64 64"  transform="translate(4,-5)" height="28" viewBox="0 0 64 64" width="28" xmlns="http://www.w3.org/2000/svg">
         <path  d="m32 8c-13.233 0-24 10.767-24 24s10.767 24 24 24 24-10.767 24-24-10.767-24-24-24zm0 44c-11.028 0-20-8.972-20-20s8.972-20 20-20 20 8.972 20 20-8.972 20-20 20z"/>
         <path d="m32 29c-1.654 0-3 1.346-3 3s1.346 3 3 3 3-1.346 3-3-1.346-3-3-3z"/>
         <path d="m23 29c-1.654 0-3 1.346-3 3s1.346 3 3 3 3-1.346 3-3-1.346-3-3-3z"/>

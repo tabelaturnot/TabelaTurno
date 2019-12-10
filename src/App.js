@@ -51,7 +51,7 @@ class AppIcon extends Component {
   render() {
     return (
       <div onClick={() => this.handleReload()}>
-      <svg id="Layer2" style={{float:'left', stroke: 'var(--color-font-main)', fill: 'var(--color-font-main)'}} enable-background="new 0 0 64 64"  transform="translate(-4,-4)" height="28" viewBox="0 0 612 612" width="28" xmlns="http://www.w3.org/2000/svg">
+      <svg id="Layer2" style={{float:'left', stroke: 'var(--color-font-main)', fill: 'var(--color-font-main)'}} enableBackground="new 0 0 64 64"  transform="translate(-4,-4)" height="28" viewBox="0 0 612 612" width="28" xmlns="http://www.w3.org/2000/svg">
         <g>
           <circle cx="386" cy="210" r="20" />
           <path d="M432,40h-26V20c0-11.046-8.954-20-20-20c-11.046,0-20,8.954-20,20v20h-91V20c0-11.046-8.954-20-20-20
