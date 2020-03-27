@@ -24,5 +24,8 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
+    - run: git config --global user.name "angww"
     - run: npm install
     - run: npm run deploy
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
