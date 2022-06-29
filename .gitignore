@@ -405,3 +405,4 @@ $RECYCLE.BIN/
 *.lnk
 
 # End of https://www.toptal.com/developers/gitignore/api/macos,node,nextjs,python,windows,linux,go
+.DS_Store
