@@ -13,10 +13,6 @@
 
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
-importScripts(
-  "/TabelaTurno/precache-manifest.dafda6fe35e07a980257c6bb22c16e41.js"
-);
-
 self.addEventListener('message', (event) => {
   if (event.data && event.data.type === 'SKIP_WAITING') {
     self.skipWaiting();

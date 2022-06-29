@@ -1,0 +1,27 @@
+{ 
+  "short_name": "Tabela Refap 12h",
+  "name": "Tabela Turno Refap 12h",
+  
+  "display": "standalone",
+  "theme_color": "#FFFFFF",
+  "background_color": "#FFFFFF",
+  "start_url": "./?utm_source=homescreen",
+
+  "icons": [
+    {
+      "src": "icon192px.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "icon512px.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }],
+
+  "serviceworker": {
+    "src": "service-worker.js",
+    "scope": "/",
+    "use_cache": false
+  }
+}
