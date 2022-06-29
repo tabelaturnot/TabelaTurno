@@ -2,4 +2,4 @@
 Shift work table in a static web page. <br>
 Link: [https://tabelaturno.github.io](https://tabelaturno.github.io)
 
-This is the first version. The project is under development.
+This is the test version. The project is aways under development in this repo.
