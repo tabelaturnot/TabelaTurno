@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Security-Policy" content="script-src 'none'">
+    <meta http-equiv="Content-Security-Policy" content="script-src 'nonce-rAnd0m'">
+
     <meta name="theme-color" content="#FFFFFF"/>
     <meta name="description" content="Tabela de turno de trabalho ininterrupto de 12h dos trabalhadores da Refinaria Alberto Pasqualini (REFAP - Canoas-RS">
 
@@ -421,7 +422,7 @@ li.monthGroupDivider {
 
 </body>
 
-<script>
+<script nonce="rAnd0m">
     /* CONSTANTS */
     const _MS_PER_DAY = 1000 * 60 * 60 * 24;
     const WEEK_DAY_TXT = ["DOM", "SEG", "TER", "QUA", "QUI", "SEX", "SÁB"];
@@ -604,7 +605,7 @@ F F F 7 19
         $("header h1").innerHTML = page.slice(1);
         if (page == "/Refap") {
             add30DayOnDOM();
-            add30DayOnDOM();
+            /*add30DayOnDOM();*/
         }
     }
 
@@ -636,14 +637,6 @@ F F F 7 19
                 // Load content for this tab/page
                 load_content(event.state);
             });
-
-    objOnEvent(document, 'readystatechange', (e) => {
-        if (document.readyState == "complete") {
-            let timer = setTimeout(function () { // Wait 50ms and set scrool to TODAY
-                scroolToToday();
-            }, 40);
-        }
-    });
 
 
     objOnEvent(document, 'scroll', () => {
@@ -895,6 +888,16 @@ F F F 7 19
             document.body.classList.add('chkGrupoDivisoria');
             $('#chkGrupoDivisoria').checked = true;
         }
+
+        objOnEvent(document, 'readystatechange', (e) => {
+            if (document.readyState == "complete") {
+                let timer = setTimeout(function () { // Wait 50ms and set scrool to TODAY
+                    scroolToToday();
+                }, 50);
+            }
+        }); 
+        
+       
     }
 
     if (typeof window.ethereum.autoRefreshOnNetworkChange !== "undefined") {
@@ -902,6 +905,15 @@ F F F 7 19
     }
 
 /*
+
+    objOnEvent(document, 'readystatechange', (e) => {
+        if (document.readyState == "complete") {
+            let timer = setTimeout(function () { // Wait 50ms and set scrool to TODAY
+                scroolToToday();
+            }, 50);
+        }
+    });
+
     function loadScript(url, callback)
 {
     // adding the script element to the head as suggested before
