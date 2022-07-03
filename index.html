@@ -51,6 +51,7 @@
 --back-color-group-divider: rgba(179, 179, 179, 0.2);
 --color-month-divider: rgba(146, 18, 18, 0.433);
 --display-month-divider: none;
+--display-day-divider: none;
 --display-group-divider: none;
 --dark-mode: 0;
 --light-mode: 1;
@@ -100,6 +101,10 @@
     --display-month-divider: block;
 }
 
+.chkLinhaDivisoriaDia {
+    --display-day-divider: 0.5pt solid lightgray;
+}
+
 .chkGrupoDivisoria {
     --display-group-divider: block;
 }
@@ -140,7 +145,7 @@ list-style-type:none;
 max-width: 392px; /* iPhone 5 */
 margin-left: auto;
 margin-right: auto;
-
+border-top: var(--display-day-divider);
 }
 li.header { 
 z-index: 80;
@@ -152,13 +157,14 @@ width: 100%;
 left: 50%;
 transform: translateX(-50%);
 cursor:default;
+border: none;
 }
 
 li.header > * { transform: translateY(20%); }
 
 time, .tabElm { 
 margin: 8px; text-align: center; width: 45px; border: 0px solid rgb(139, 78, 78); display: table-cell; 
-padding: 10px 0px;
+padding: 13px 0px;
 
 }
 time.date, time.wD {
@@ -338,6 +344,9 @@ li.monthGroupDivider {
     display: var(--display-group-divider);
 }
 
+.font95p { font-size: 95%; }
+.linksData { font-size: 90%; border-bottom: 0.5pt solid gray; }
+
 </style>
     
 </head>
@@ -346,49 +355,49 @@ li.monthGroupDivider {
     <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5Z7CPHL" height="0" width="0" style="display:none;visibility:hidden"></iframe>
     ⚠️ Este app só funciona com javascript habilitado. ⚠️
 </noscript>
-      <nav class="menu">
-        <h2>Temas</h2>
-        <ul>
-        <li>
-            <input type="radio" id="chkTemaClaro" name="grTheme" value="chkTemaClaro"> 
-            <label for="chkTemaClaro">Claro</label>
-        </li>
-        <li>
-            <input type="radio" id="chkTemaEscuro" name="grTheme" value="chkTemaEscuro"> 
-            <label for="chkTemaEscuro">Escuro</label>
-        </li>
-        <li>
-            <input type="checkbox" id="chkAccessibleColorMode" value="chkAccessibleColorMode"> 
-            <label for="chkAccessibleColorMode">Tema acessível</label>
-        </li>
-        <li>
-            <input type="checkbox" id="chkLinhaDivisoria" value="chkLinhaDivisoria"> 
-            <label for="chkLinhaDivisoria">Divisória mensal</label>
-        </li>
-        <li>
-            <input type="checkbox" id="chkGrupoDivisoria" value="chkGrupoDivisoria"> 
-            <label for="chkGrupoDivisoria"><span style="font-size: 95%;">Grupos todo mês</span></label>
-        </li>
-        </ul>
-        
-        <h2>Tamanhos</h2>
-        <div class="caixa">
-            <input type="radio" id="radioFontSize_1" name="radioFontSize" value="1"> 
-            <label for="radioFontSize_1"> P </label>
-            <input type="radio" id="radioFontSize_2" name="radioFontSize" value="2"> 
-            <label for="radioFontSize_2"> M </label>
-            <input type="radio" id="radioFontSize_3" name="radioFontSize" value="3"> 
-            <label for="radioFontSize_3"> G </label>
-        </div>
-        <h2>Ir para</h2>
-        <ul>
-            <li id="linkMenuHoje"> HOJE </li>
-            <li id="linkMais30Dias">+30 dias</li>
-            <li id="linkAnoQueVem">Janeiro/2023</li>
-        </ul>
+    <nav class="menu">
+    <h2>Temas</h2>
     <ul>
-        <li>Analitcs22</li>
-        <li>404 github</li>
+    <li>
+        <input type="radio" id="chkTemaClaro" name="grTheme" value="chkTemaClaro"> 
+        <label for="chkTemaClaro">Claro</label>
+    </li>
+    <li>
+        <input type="radio" id="chkTemaEscuro" name="grTheme" value="chkTemaEscuro"> 
+        <label for="chkTemaEscuro">Escuro</label>
+    </li>
+    <li>
+        <input type="checkbox" id="chkAccessibleColorMode" value="chkAccessibleColorMode"> 
+        <label for="chkAccessibleColorMode">Tema acessível</label>
+    </li>
+    <li>
+        <input type="checkbox" id="chkLinhaDivisoriaDia" value="chkLinhaDivisoriaDia"> 
+        <label for="chkLinhaDivisoriaDia">Divisória diária</label>
+    </li>
+    <li>
+        <input type="checkbox" id="chkLinhaDivisoria" value="chkLinhaDivisoria"> 
+        <label for="chkLinhaDivisoria">Divisória mensal</label>
+    </li>
+    <li>
+        <input type="checkbox" id="chkGrupoDivisoria" value="chkGrupoDivisoria"> 
+        <label for="chkGrupoDivisoria"><span class="font95p">Grupos todo mês</span></label>
+    </li>
+    </ul>
+    
+    <h2>Tamanhos</h2>
+    <div class="caixa">
+        <input type="radio" id="radioFontSize_1" name="radioFontSize" value="1"> 
+        <label for="radioFontSize_1"> P </label>
+        <input type="radio" id="radioFontSize_2" name="radioFontSize" value="2"> 
+        <label for="radioFontSize_2"> M </label>
+        <input type="radio" id="radioFontSize_3" name="radioFontSize" value="3"> 
+        <label for="radioFontSize_3"> G </label>
+    </div>
+    <h2>Ir para</h2>
+    <ul class="linksData">
+        <li id="linkMenuHoje"> HOJE </li>
+        <li id="linkMais30Dias">+30 dias</li>
+        <li id="linkAnoQueVem">Janeiro/2023</li>
     </ul>
     <div class="small">
         Contato <a href="mailto:turno.tabela+click@gmail.com">turno.tabela@gmail.com</a><br />
@@ -520,6 +529,14 @@ F F F 7 19
             obj = $(obj);
         }
         obj.addEventListener(event, func);
+        if (event == "click") {
+            obj.addEventListener(event, (e) => {
+                //gtag('event', "click", {"objeto": obj.id });
+                console.log("CLICK: ", obj.id);
+            });
+            
+        }
+        
     }
 
     /* function remove classes that starts with input string */
@@ -780,6 +797,11 @@ F F F 7 19
         document.body.classList.toggle("accessibleColorMode");
         localStorage.setItem("accessibleColorMode", $('#chkAccessibleColorMode').checked);
     });
+    
+    objOnEvent('#chkLinhaDivisoriaDia', 'click', () => {
+        document.body.classList.toggle("chkLinhaDivisoriaDia");
+        localStorage.setItem("chkLinhaDivisoriaDia", $('#chkLinhaDivisoriaDia').checked);
+    });
 
     objOnEvent('#chkLinhaDivisoria', 'click', () => {
         document.body.classList.toggle("chkLinhaDivisoria");
@@ -849,12 +871,13 @@ F F F 7 19
         if (radio.value == localStorage.getItem("fontSize")) {
             radio.checked = true;
         }
-
-        radio.addEventListener('click', (elm) => {
+      
+        objOnEvent(radio, 'click', (elm) => {
             removeBodyClassStartsWith("fontSize_"); /*fontSize_1 */
             document.body.classList.add("fontSize_" + elm.target.value);
             localStorage.setItem("fontSize", elm.target.value);
         });
+
         
     });
 
@@ -879,8 +902,10 @@ F F F 7 19
         localStorage.setItem('fontSize', '2'); /* 1 or 2 or 3 */
         localStorage.setItem('groupSelected', '');
         localStorage.setItem("selectedGR", "");
+        localStorage.setItem("chkLinhaDivisoriaDia", true);
         localStorage.setItem("chkLinhaDivisoria", false);
         localStorage.setItem("chkGrupoDivisoria", true); /* default is true */
+        localStorage.setItem("visitsCount", 0);
         setStyles();
     }
 
@@ -890,8 +915,10 @@ F F F 7 19
         let accessibleColorMode =  localStorage.getItem('accessibleColorMode');
         let fontSize = localStorage.getItem('fontSize');
         let groupSelected = localStorage.getItem('selectedGR');
+        let chkLinhaDivisoriaDia = localStorage.getItem('chkLinhaDivisoriaDia');
         let chkLinhaDivisoria = localStorage.getItem('chkLinhaDivisoria');
         let chkGrupoDivisoria = localStorage.getItem("chkGrupoDivisoria");
+        localStorage["visitsCount"] = parseInt(localStorage["visitsCount"]) + 1;
 
         setGlobalTheme(themeColor);
 
@@ -907,6 +934,11 @@ F F F 7 19
 
         if (groupSelected != '') {
             document.styleSheets[1].insertRule("." + groupSelected + " {  background-color: var(--bg-gr-selec);  }", 0);
+        }
+
+        if (chkLinhaDivisoriaDia == 'true') {
+            document.body.classList.add('chkLinhaDivisoriaDia');
+            $('#chkLinhaDivisoriaDia').checked = true;
         }
 
         if (chkLinhaDivisoria == 'true') {
@@ -942,11 +974,25 @@ F F F 7 19
     /* *************************  ANALITCS  ********************************* */
     /* ********************************************************************** */
 
+    // function that list all propriets of localStorage
+    function LocalStorageValues() {
+        var output = {};
+        for (var i = 0; i < localStorage.length; i++) {
+            var key = localStorage.key(i);
+            var value = localStorage.getItem(key);
+            output = {...output, [key]: value};
+        }
+        return output;
+    }
+
     window.dataLayer = window.dataLayer || [] ;
     function gtag(){dataLayer.push(arguments);}
     gtag( 'js', new Date () ) ;
 
-    gtag( 'config', 'GTM-5Z7CPHL');
+    gtag(   'config',    'GTM-5Z7CPHL', {
+            'user_properties': localStorage,
+    });
+
     // Feature detects Navigation Timing API support.
     if (window.performance) {
         // Gets the number of milliseconds since page load
@@ -955,16 +1001,16 @@ F F F 7 19
         objOnEvent(document, 'readystatechange', (e) => {
             if (document.readyState == "complete") {
                 var timeSincePageLoad = Math.round(performance.now()); 
-                console.log("timeSincePageLoad: " + timeSincePageLoad);
+                // Sends the timing event to Google Analytics.
+                gtag('event', 'timing_complete', {
+                    'name': 'load',
+                    'value': timeSincePageLoad,
+                    'event_category': 'JS Dependencies'
+                });
             }
         }); 
         
-        // Sends the timing event to Google Analytics.
-        gtag('event', 'timing_complete', {
-            'name': 'load',
-            'value': timeSincePageLoad,
-            'event_category': 'JS Dependencies'
-        });
+        
     }
     
 
