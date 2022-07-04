@@ -1,4 +1,5 @@
 tabelaturnot/TabelaTurnot.github.io@master:
-  - index.html
-  - manifest.json
-  - service-worker.js
+  - source: workflows/
+    dest: .github/workflows/
+    exclude: |
+      git-sync.yml
