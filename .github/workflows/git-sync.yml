@@ -20,13 +20,11 @@ jobs:
         git config --global user.name "github-actions[bot]"
         git config --global user.email "github-actions[bot]@users.noreply.github.com"
         git remote add destination $REPO_URL
-        git push --force destination +refs/heads/main:refs/heads/main
-
+        git push --force destination +refs/heads/master:refs/heads/master
     - name: Clean and reset working directory
       run: |
         git clean -fdx
         git reset --hard
-
     - name: Sync repository content
       run: |
         rsync -av --delete --exclude '.git' ./ ../destination-repo/
